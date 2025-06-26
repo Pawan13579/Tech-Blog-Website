@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TechForge Blog</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Decorative background overlay (optional pattern) -->
+  <div class="background-decor"></div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <h1>TechForge</h1>
+    <nav>
+      <input type="text" id="search-input" placeholder="Search tech..." />
+      <button onclick="toggleDarkMode()">🌓</button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay">
+      <h2>Explore the Future of Technology</h2>
+      <p>AI, Gadgets, Robotics and more — curated for you.</p>
+    </div>
+  </section> <!-- Close hero section -->
+
+  <!-- Categories - Moved outside hero and centered -->
+  <section class="categories">
+    <button class="category-btn active" data-category="All">All</button>
+    <button class="category-btn" data-category="AI">AI</button>
+    <button class="category-btn" data-category="Gadgets">Gadgets</button>
+    <button class="category-btn" data-category="Robotics">Robotics</button>
+  </section>
+
+  <!-- Blog Grid -->
+  <main class="blog-grid" id="blog-grid">
+    <div class="blog-card" data-category="AI">
+      <img src="AI.jpg" alt="AI" />
+      <h3>AI is Changing the World</h3>
+      <p>Discover how AI is shaping our future in every sector.</p>
+    </div>
+
+    <div class="blog-card" data-category="Gadgets">
+      <img src="Gadget.jpg" alt="Gadget" />
+      <h3>Top Gadgets of 2025</h3>
+      <p>Unveiling the most awaited tech gadgets this year.</p>
+    </div>
+
+    <div class="blog-card" data-category="Robotics">
+      <img src="Robotics.jpg" alt="Robotics" />
+      <h3>The Rise of Robotics</h3>
+      <p>From factories to homes, robots are taking charge.</p>
+    </div>
+
+    <div class="blog-card" data-category="AI">
+      <img src="ML.jpg" alt="ML" />
+      <h3>ML in Everyday Life</h3>
+      <p>Explore how machine learning powers modern devices.</p>
+    </div>
+  </main>
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <h2>Tech<span>Forge</span></h2>
+    </div>
+
+    <ul class="footer-links">
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Tip Us</a></li>
+      <li><a href="#">Community Guidelines</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms</a></li>
+    </ul>
+
+    <div class="footer-socials">
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fas fa-rss"></i></a>
+    </div>
+  </div>
+  <p class="copyright">
+    © 2025 <strong>TechForge</strong>. All rights reserved.
+  </p>
+</footer>
+
+
+  <!-- JS Script -->
+  <script src="script.js"></script>
+</body>
+</html>

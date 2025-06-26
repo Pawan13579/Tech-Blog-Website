@@ -1,0 +1,273 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background techy image layer */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-image: url('bg.jpg'); /* Make sure bg.jpg exists or remove */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  z-index: -2;
+  filter: brightness(1.2);
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Optional dark mode */
+body.dark::before {
+  opacity: 0.08;
+  filter: grayscale(100%) brightness(0.6) blur(3px);
+}
+
+/* Body */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: #1f1f1f;
+  position: relative;
+  overflow-x: hidden;
+  transition: background 0.3s, color 0.3s;
+  background-color: #fff;
+}
+
+body.dark {
+  color: #f1f1f1;
+  background-color: #121212;
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 10;
+}
+
+.navbar input {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  width: 220px;
+  font-size: 1rem;
+}
+
+.navbar button {
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+  border: none;
+  background-color: #ffffff22;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.navbar button:hover {
+  background-color: #ffffff44;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 300px;
+  background: url("https://source.unsplash.com/1600x600/?technology,futuristic") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  z-index: 0;
+}
+
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  max-width: 600px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.7);
+}
+
+.hero-overlay h2 {
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-overlay p {
+  font-size: 1.25rem;
+}
+
+/* Categories Buttons */
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+.categories button {
+  padding: 0.65rem 1.5rem;
+  background: #0072ff;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1.1rem;
+  box-shadow: 0 3px 6px rgba(0,114,255,0.5);
+  transition: background 0.25s ease;
+}
+
+.categories button:hover {
+  background: #0051cc;
+}
+
+.category-btn.active {
+  background-color: #003d99;
+  box-shadow: 0 0 10px rgba(0,61,153,0.8);
+}
+
+/* Blog Cards Grid */
+.blog-grid {
+  max-width: 1200px;
+  margin: 0 auto 3rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+  z-index: 1;
+}
+
+/* Blog Card */
+.blog-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.blog-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 3px solid #0072ff;
+}
+
+.blog-card h3 {
+  margin: 1rem;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.blog-card p {
+  margin: 0 1rem 1rem;
+  font-size: 1rem;
+  color: #444;
+  flex-grow: 1;
+}
+
+body.dark .blog-card {
+  background-color: rgba(30, 30, 30, 0.7);
+  color: #eee;
+}
+
+body.dark .blog-card p {
+  color: #ccc;
+}
+.site-footer {
+  background: transparent;
+  color: #000;                      /* Black text */
+  font-weight: 600;                /* Bolder */
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.site-footer .footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.site-footer .footer-logo h2 {
+  font-size: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+}
+
+.site-footer .footer-logo h2 span {
+  color: #00e5ff;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li a {
+  color: #000;                     /* Black links */
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-links li a:hover {
+  color: #0072ff;                  /* Accent color on hover */
+}
+
+.footer-socials a {
+  color: #000;                     /* Black icons */
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: transform 0.2s;
+}
+
+.footer-socials a:hover {
+  color: #0072ff;
+  transform: scale(1.2);
+}
+
+footer .copyright {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #777;
+}
